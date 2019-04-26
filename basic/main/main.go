@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+const url = "https://darker.me"
+
 func main() {
 	// 短变量声明
 	// 只能在函数内使用
@@ -11,6 +13,10 @@ func main() {
 	basicType()
 
 	defaultValue()
+
+	assertType()
+
+	printConst()
 }
 
 /*
@@ -26,6 +32,7 @@ go的基本类型:
 	rune // int32 的别名
 		 // 表示一个Unicode码点
 	float32 float64
+	// 复数
 	complex64 complex128
 
 	int, uint 和 uintptr 在 32 位系统上通常为 32 位宽，在 64 位系统上则为 64 位宽。
@@ -52,4 +59,16 @@ func defaultValue() {
 	var s string
 	fmt.Printf("%v %v %v %v \n", i, f, b, s)
 	// print: 0 0 false (显示不出来空的字符串)
+}
+
+/*
+	类型推导
+ */
+func assertType() {
+	v := 0.123 + 0.5i
+	fmt.Printf("v is of type %T\n",v)
+}
+
+func printConst() {
+	fmt.Printf("const value is %v\n",url)
 }
