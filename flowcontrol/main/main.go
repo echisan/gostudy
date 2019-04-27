@@ -56,7 +56,8 @@ func ifWithShortStatement(x, y int) {
 	if z := x + y; z < 100 {
 		fmt.Println(z)
 	} else {
-		fmt.Println(x - y)
+		// else 中也可使用z
+		fmt.Println(x - y + z)
 	}
 
 }
